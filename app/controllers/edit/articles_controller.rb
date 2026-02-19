@@ -16,7 +16,7 @@ class Edit::ArticlesController < ApplicationController
       end
     end
 
-    render json: @articles, :include => {:author => {:only => :name}}
+    render json: { articles: @articles, :include => {:author => {:only => :name}} }
   end
 
   # GET /articles/1

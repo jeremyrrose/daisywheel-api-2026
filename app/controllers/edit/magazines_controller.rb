@@ -1,5 +1,5 @@
 class Edit::MagazinesController < ApplicationController
-  before_action :set_magazine, only: [:show, :update, :destroy]
+  before_action :set_magazine, only: [:show, :update]
 
   # GET /magazines
   def index
