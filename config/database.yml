@@ -85,20 +85,21 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
+  url: <%= ENV['DATABASE_URL'] %>
   primary: &primary_production
     <<: *default
     database: daisywheel_api_2026_production
     username: daisywheel_api_2026
     password: <%= ENV["DAISYWHEEL_API_2026_DATABASE_PASSWORD"] %>
-  cache:
-    <<: *primary_production
-    database: daisywheel_api_2026_production_cache
-    migrations_paths: db/cache_migrate
-  queue:
-    <<: *primary_production
-    database: daisywheel_api_2026_production_queue
-    migrations_paths: db/queue_migrate
-  cable:
-    <<: *primary_production
-    database: daisywheel_api_2026_production_cable
-    migrations_paths: db/cable_migrate
+  # cache:
+  #   <<: *primary_production
+  #   database: daisywheel_api_2026_production_cache
+  #   migrations_paths: db/cache_migrate
+  # queue:
+  #   <<: *primary_production
+  #   database: daisywheel_api_2026_production_queue
+  #   migrations_paths: db/queue_migrate
+  # cable:
+  #   <<: *primary_production
+  #   database: daisywheel_api_2026_production_cable
+  #   migrations_paths: db/cable_migrate
